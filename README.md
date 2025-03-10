@@ -19,7 +19,7 @@ To add `NetworkClient` to your project, follow these steps:
 1. Open Xcode and navigate to `File > Swift Packages > Add Package Dependency`.
 2. Enter the repository URL:
    ```sh
-   https://github.com/novecapa/NetworkClient.git
+     https://github.com/novecapa/DCNetworkProvider
    ```
 3. Choose the latest version and add it to your project.
 
