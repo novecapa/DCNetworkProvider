@@ -1,5 +1,5 @@
 //
-//  RequestParams.swift
+//  DCRequestParams.swift
 //  NetworkCom
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum RequestParams: Sendable {
+public enum DCRequestParams: Sendable {
     case query([String: any Sendable])
     case bodyRaw(Data)
     case multipart([String: any Sendable])

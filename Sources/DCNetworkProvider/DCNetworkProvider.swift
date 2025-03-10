@@ -1,5 +1,5 @@
 //
-//  NetworkClient.swift
+//  DCNetworkProvider.swift
 //  NetworkCom
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
@@ -11,7 +11,7 @@ import Foundation
 ///
 /// This class conforms to `NetworkClientProtocol` and provides an asynchronous method
 /// to perform network calls using `URLSession`.
-public final class NetworkClient: NetworkClientProtocol {
+public final class DCNetworkProvider: DCNetworkClientProtocol {
     
     /// The URL session used for making network requests.
     let urlSession: URLSessionProtocol
@@ -33,8 +33,8 @@ public final class NetworkClient: NetworkClientProtocol {
     /// - Returns: A decoded object of the specified type.
     public func call<T: Decodable>(
         baseURL: String,
-        method: NetworkMethod = .get,
-        params: RequestParams? = nil,
+        method: DCNetworkMethod = .get,
+        params: DCRequestParams? = nil,
         of type: T.Type
     ) async throws -> T where T: Decodable {
         
@@ -42,7 +42,7 @@ public final class NetworkClient: NetworkClientProtocol {
         urlComponents?.addQueryParams(params)
         
         guard let url = urlComponents?.url else {
-            throw NetworkError.badURL
+            throw DCNetworkError.badURL
         }
         
         var request = URLRequest(url: url)
@@ -53,7 +53,7 @@ public final class NetworkClient: NetworkClientProtocol {
             let (data, response) = try await urlSession.getDataFrom(request, type: T.self)
             
             guard let response = response as? HTTPURLResponse else {
-                throw NetworkError.badResponse
+                throw DCNetworkError.badResponse
             }
             
             Log.thisRequest(response, data: data, request: request)
@@ -62,14 +62,14 @@ public final class NetworkClient: NetworkClientProtocol {
             case 200..<300:
                 return try JSONDecoder().decode(T.self, from: data)
             case 400..<499:
-                throw NetworkError.badRequest
+                throw DCNetworkError.badRequest
             case 500..<504:
-                throw NetworkError.serverError
+                throw DCNetworkError.serverError
             default:
-                throw NetworkError.badResponse
+                throw DCNetworkError.badResponse
             }
         } catch {
-            throw NetworkError.badRequest
+            throw DCNetworkError.badRequest
         }
     }
 }

@@ -1,6 +1,6 @@
 //
 //  URLRequest+Extensions.swift
-//  NetworkCom
+//  DCRequestParams
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLRequest {
-    mutating func addRequestParams(_ params: RequestParams?) {
+    mutating func addRequestParams(_ params: DCRequestParams?) {
         guard let params else { return }
         switch params {
         case .multipart(let postData):

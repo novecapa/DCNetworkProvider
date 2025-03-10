@@ -1,6 +1,6 @@
 //
 //  URLComponents+Extensions.swift
-//  NetworkCom
+//  DCRequestParams
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLComponents {
-    mutating func addQueryParams(_ queryParams: RequestParams?) {
+    mutating func addQueryParams(_ queryParams: DCRequestParams?) {
         guard let query = queryParams else { return }
         switch query {
         case .query(let params):

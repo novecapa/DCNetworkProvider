@@ -1,11 +1,11 @@
 //
-//  NetworkError.swift
-//  NetworkCom
+//  DCNetworkError.swift
+//  DCRequestParams
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
 
-public enum NetworkError: Error, Hashable {
+public enum DCNetworkError: Error, Hashable {
     case badURL
     case badRequest
     case serverError

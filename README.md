@@ -19,7 +19,7 @@ To add `NetworkClient` to your project, follow these steps:
 1. Open Xcode and navigate to `File > Swift Packages > Add Package Dependency`.
 2. Enter the repository URL:
    ```sh
-   https://github.com/novecapa/NetworkClient.git
+   https://github.com/novecapa/DCNetworkClient.git
    ```
 3. Choose the latest version and add it to your project.
 
@@ -32,7 +32,7 @@ import NetworkClient
 
 ### Creating an Instance of NetworkClient
 ```swift
-let networkClient = NetworkClient(urlSession: URLSession.shared)
+let networkClient = DCNetworkClient(urlSession: URLSession.shared)
 ```
 
 ### Making a Network Request
@@ -57,7 +57,7 @@ Task {
 ```
 
 ## Error Handling
-The `NetworkClient` throws `NetworkError` cases:
+The `DCNetworkClient` throws `NetworkError` cases:
 - `.badURL` – Invalid URL.
 - `.badResponse` – No valid response received.
 - `.badRequest` – 4xx client errors.
