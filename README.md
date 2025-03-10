@@ -14,12 +14,12 @@ A lightweight and simple Swift library for making network requests in iOS applic
 
 ### Swift Package Manager (SPM)
 
-To add `NetworkClient` to your project, follow these steps:
+To add `DCNetworkProvider` to your project, follow these steps:
 
 1. Open Xcode and navigate to `File > Swift Packages > Add Package Dependency`.
 2. Enter the repository URL:
    ```sh
-   https://github.com/novecapa/DCNetworkClient.git
+     https://github.com/novecapa/DCNetworkProvider
    ```
 3. Choose the latest version and add it to your project.
 
@@ -27,12 +27,12 @@ To add `NetworkClient` to your project, follow these steps:
 
 ### Importing the Library
 ```swift
-import NetworkClient
+import DCNetworkProvider
 ```
 
 ### Creating an Instance of NetworkClient
 ```swift
-let networkClient = DCNetworkClient(urlSession: URLSession.shared)
+let networkClient = DCNetworkProvider(urlSession: URLSession.shared)
 ```
 
 ### Making a Network Request
@@ -57,7 +57,7 @@ Task {
 ```
 
 ## Error Handling
-The `DCNetworkClient` throws `NetworkError` cases:
+The `DCNetworkProvider` throws `DCNetworkError` cases:
 - `.badURL` – Invalid URL.
 - `.badResponse` – No valid response received.
 - `.badRequest` – 4xx client errors.
