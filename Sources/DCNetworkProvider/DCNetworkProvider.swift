@@ -1,6 +1,6 @@
 //
 //  DCNetworkProvider.swift
-//  NetworkCom
+//  DCNetworkProvider
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
@@ -9,7 +9,7 @@ import Foundation
 
 /// A network client responsible for making HTTP requests and decoding responses.
 ///
-/// This class conforms to `NetworkClientProtocol` and provides an asynchronous method
+/// This class conforms to `DCNetworkProvider` and provides an asynchronous method
 /// to perform network calls using `URLSession`.
 public final class DCNetworkProvider: DCNetworkClientProtocol {
     

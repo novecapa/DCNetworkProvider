@@ -1,6 +1,6 @@
 //
 //  DCNetworkClientProtocol.swift
-//  DCRequestParams
+//  DCNetworkProvider
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
