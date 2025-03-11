@@ -20,15 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-//  DCNetworkError.swift
+//  DCNetworkProviderProtocol.swift
 //  DCNetworkProvider
 //
 //  Created by Josep Cerdá Penadés on 10/3/25.
 //
 
-public enum DCNetworkError: Error, Hashable {
-    case badURL
-    case badRequest
-    case serverError
-    case badResponse
+import Foundation
+
+public protocol DCNetworkProviderProtocol {
+    func call<T: Decodable>(baseURL: String,
+                            method: DCNetworkMethod,
+                            params: DCRequestParams?,
+                            of type: T.Type) async throws -> T
 }
