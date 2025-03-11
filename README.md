@@ -1,4 +1,4 @@
-# NetworkClient
+# DCNetworkProvider
 
 A lightweight and simple Swift library for making network requests in iOS applications using `URLSession`. This library provides an easy way to handle HTTP requests and parse responses using `Decodable` types.
 
@@ -30,7 +30,7 @@ To add `DCNetworkProvider` to your project, follow these steps:
 import DCNetworkProvider
 ```
 
-### Creating an Instance of NetworkClient
+### Creating an Instance of DCNetworkProvider
 ```swift
 let networkClient = DCNetworkProvider(urlSession: URLSession.shared)
 ```
